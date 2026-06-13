@@ -36,6 +36,12 @@ const testimonials = [
     content: 'We needed a web app built fast without sacrificing quality. Nuclipp delivered a polished, performant product that exceeded our expectations. Highly recommend their development services.',
     rating: 5,
   },
+  {
+    name: 'Emily Watson',
+    role: 'Digital Marketing Manager',
+    content: 'Working with Nuclipp has been a game-changer for our social media strategy. Their eye for detail and incredibly fast delivery time gives us a serious competitive edge.',
+    rating: 5,
+  },
 ];
 
 const featuredProjects = [
