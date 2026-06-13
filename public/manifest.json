@@ -1,0 +1,18 @@
+{
+  "name": "Nuclipp Creative Platform",
+  "short_name": "Nuclipp",
+  "description": "Premium Freelance Creative Platform for Video Editing, Graphic Design, and Web Development.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/nuclipp-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
