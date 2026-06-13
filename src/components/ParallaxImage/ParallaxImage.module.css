@@ -50,3 +50,9 @@
 .parallaxContainer[data-color="cyan"]::after {
   background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
 }
+
+@media (max-width: 768px) {
+  .parallaxContainer {
+    display: none !important;
+  }
+}

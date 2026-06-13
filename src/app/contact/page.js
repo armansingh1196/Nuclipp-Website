@@ -32,9 +32,9 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Construct mailto link
-    const toEmail = 'hello@nuclipp.com'; // Replace with your actual email
+    const toEmail = 'business.nuclipp@gmail.com';
     const subject = `New Project Inquiry from ${formState.name}`;
     const body = `Name: ${formState.name}
 Email: ${formState.email}
@@ -46,10 +46,10 @@ ${formState.message}
 `;
 
     const mailtoLink = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
+
     // Open default mail client
     window.location.href = mailtoLink;
-    
+
     setIsSubmitted(true);
   };
 
@@ -81,14 +81,14 @@ ${formState.message}
       <section className={styles.mainArea}>
         <div className="container">
           <div className={styles.overlapContainer}>
-            
+
             {/* Form Side */}
             <div className={`glass-card ${styles.formCard}`}>
               <div className={styles.formHeader}>
                 <h2>Send a Message</h2>
-                <p>Fill out the details below and we&apos;ll be in touch shortly.</p>
+                <p>Fill out the details below. All inquiries are securely logged into our Trello CRM to ensure your project is managed with complete transparency from day one.</p>
               </div>
-              
+
               {isSubmitted ? (
                 <div className={styles.successState}>
                   <CheckCircle size={48} className={styles.successIcon} />

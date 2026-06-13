@@ -16,7 +16,17 @@ const outfit = Outfit({
   display: "swap",
 });
 
+export const viewport = {
+  themeColor: "#0a0a0f",
+};
+
 export const metadata = {
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Nuclipp",
+  },
   metadataBase: new URL("https://nuclipp.com"),
   title: {
     default: "Nuclipp — Premium Freelance Creative Services | Video Editing, Graphic Design & Development",
