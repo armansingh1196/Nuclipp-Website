@@ -400,10 +400,16 @@ p {
 
 @media (max-width: 480px) {
   :root {
-    --space-xl: 1.25rem;
-    --space-2xl: 1.5rem;
-    --space-3xl: 2rem;
-    --space-4xl: 2.5rem;
-    --space-5xl: 4rem;
+    --space-md: 0.875rem;
+    --space-lg: 1.25rem;
+    --space-xl: 1rem;
+    --space-2xl: 1.25rem;
+    --space-3xl: 1.5rem;
+    --space-4xl: 2rem;
+    --space-5xl: 3rem;
+  }
+
+  html {
+    font-size: 13px;
   }
 }

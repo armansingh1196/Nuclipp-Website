@@ -159,7 +159,24 @@
 @media (max-width: 640px) {
   .footerGrid {
     grid-template-columns: 1fr;
-    gap: var(--space-2xl);
+    gap: var(--space-xl);
+  }
+
+  .footer {
+    padding-top: var(--space-2xl);
+  }
+
+  .logoImage {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logoText {
+    font-size: 1.1rem;
+  }
+
+  .brandDesc {
+    font-size: 0.8rem;
   }
 
   .footerBottom {

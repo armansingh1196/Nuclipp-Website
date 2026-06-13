@@ -132,3 +132,18 @@
   color: var(--text-tertiary);
   backdrop-filter: blur(4px);
 }
+
+@media (max-width: 768px) {
+  .content {
+    padding: var(--space-lg);
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .tag {
+    padding: 2px 8px;
+    font-size: 0.65rem;
+  }
+}

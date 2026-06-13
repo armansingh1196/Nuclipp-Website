@@ -115,3 +115,24 @@
 .card:hover .linkRow {
   gap: var(--space-sm);
 }
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--space-xl);
+  }
+
+  .iconWrapper {
+    width: 42px;
+    height: 42px;
+    margin-bottom: var(--space-md);
+  }
+
+  .title {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+}

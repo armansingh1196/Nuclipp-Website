@@ -305,11 +305,26 @@
   .tab {
     text-align: center;
     border-radius: var(--radius-md);
+    padding: var(--space-xs) var(--space-md);
+    font-size: 0.85rem;
+  }
+
+  .card, .channelCard {
+    padding: var(--space-xl);
+  }
+
+  .price {
+    font-size: 1.6rem;
+  }
+
+  .channelPrice {
+    font-size: 2rem;
   }
 
   .extraRow {
     flex-direction: column;
     text-align: center;
     align-items: stretch;
+    padding: var(--space-md);
   }
 }
