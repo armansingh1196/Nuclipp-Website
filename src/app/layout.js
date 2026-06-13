@@ -3,7 +3,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import CustomCursor from "@/components/CustomCursor/CustomCursor";
-import PWARegister from "@/components/PWARegister/PWARegister";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,7 +18,6 @@ const outfit = Outfit({
 
 export const metadata = {
   metadataBase: new URL("https://nuclipp.com"),
-  manifest: "/manifest.json",
   title: {
     default: "Nuclipp — Premium Freelance Creative Services | Video Editing, Graphic Design & Development",
     template: "%s | Nuclipp",
@@ -65,7 +63,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${outfit.variable}`}>
-        <PWARegister />
         <CustomCursor />
         <Navbar />
         <main>{children}</main>
