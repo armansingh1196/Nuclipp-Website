@@ -497,6 +497,18 @@
     height: auto;
   }
 
+  .anatomyTitleBox, .anatomyLexicon {
+    justify-self: center;
+  }
+
+  .anatomyTitleBox {
+    text-align: center;
+  }
+
+  .anatomyTitleBox > div {
+    text-align: center !important;
+  }
+
   .anatomyMath {
     grid-template-columns: 1fr;
     gap: var(--space-md);
