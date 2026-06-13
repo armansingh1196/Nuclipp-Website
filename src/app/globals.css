@@ -138,6 +138,12 @@ ul, ol {
   list-style: none;
 }
 
+@media (pointer: fine) {
+  body, a, button {
+    cursor: none;
+  }
+}
+
 img {
   max-width: 100%;
   display: block;

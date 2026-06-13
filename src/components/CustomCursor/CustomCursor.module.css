@@ -41,11 +41,4 @@
   backdrop-filter: blur(2px);
 }
 
-/* Hide default cursor globally when this component is active */
-:global(body) {
-  cursor: none;
-}
 
-:global(a), :global(button) {
-  cursor: none;
-}
