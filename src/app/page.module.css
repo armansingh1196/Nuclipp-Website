@@ -555,6 +555,32 @@
   }
 
   .advantageGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .advantageCard {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .advantageIcon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: var(--space-sm);
+  }
+
+  .advantageIcon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .advantageTitle {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .advantageDesc {
+    font-size: 0.75rem;
+    line-height: 1.4;
   }
 }
