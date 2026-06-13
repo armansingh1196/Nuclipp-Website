@@ -96,3 +96,41 @@
   font-size: 0.8rem;
   color: var(--text-tertiary);
 }
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--space-lg);
+    gap: var(--space-sm);
+  }
+
+  .card::before {
+    font-size: 5rem;
+    top: -5px;
+    right: 10px;
+  }
+
+  .content {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .author {
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .name {
+    font-size: 0.8rem;
+  }
+
+  .role {
+    font-size: 0.7rem;
+  }
+}

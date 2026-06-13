@@ -504,8 +504,19 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: calc(var(--nav-height) + var(--space-xl));
+    padding-bottom: var(--space-xl);
+  }
+
   .heroTitle {
     font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .heroSubtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 var(--space-sm);
   }
 
   .ctaButtons {
@@ -516,11 +527,24 @@
   
   .teamGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
   }
-}
 
-@media (max-width: 480px) {
-  .teamGrid {
-    grid-template-columns: 1fr;
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .valueCard {
+    padding: var(--space-lg) var(--space-md);
+  }
+  
+  .valueTitle {
+    font-size: 0.95rem;
+  }
+  
+  .valueDesc {
+    font-size: 0.75rem;
+    line-height: 1.4;
   }
 }

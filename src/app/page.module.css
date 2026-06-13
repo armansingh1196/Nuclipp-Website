@@ -531,13 +531,19 @@
   }
 
   .testimonialGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .heroTitle {
     font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .heroSubtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 var(--space-sm);
   }
 
   .heroCtas {
@@ -551,7 +557,13 @@
   }
 
   .projectGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
   }
 
   .advantageGrid {
@@ -582,5 +594,10 @@
   .advantageDesc {
     font-size: 0.75rem;
     line-height: 1.4;
+  }
+
+  .testimonialGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
   }
 }

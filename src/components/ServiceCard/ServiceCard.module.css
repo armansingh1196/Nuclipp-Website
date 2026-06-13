@@ -118,21 +118,36 @@
 
 @media (max-width: 768px) {
   .card {
-    padding: var(--space-xl);
+    padding: var(--space-lg) var(--space-md);
   }
 
   .iconWrapper {
-    width: 42px;
-    height: 42px;
-    margin-bottom: var(--space-md);
-  }
-
-  .title {
-    font-size: 1.15rem;
+    width: 32px;
+    height: 32px;
     margin-bottom: var(--space-sm);
   }
 
+  .iconWrapper svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .title {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-xs);
+  }
+
   .description {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .features {
+    display: none;
+  }
+
+  .linkRow {
+    font-size: 0.75rem;
+    margin-top: var(--space-sm);
   }
 }
