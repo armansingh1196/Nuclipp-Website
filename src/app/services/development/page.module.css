@@ -402,12 +402,29 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: calc(var(--nav-height) + var(--space-xl));
+    padding-bottom: var(--space-xl);
+  }
+
+  .heroTitle {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .heroSubtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 var(--space-sm);
+  }
+
   .servicesGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
   }
 
   .projectGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
   }
 
   .heroCtas {
@@ -415,10 +432,12 @@
   }
 
   .softwareGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
   }
 
   .saleGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
   }
 }
