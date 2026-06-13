@@ -1,0 +1,117 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sizes */
+.sm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+}
+
+.md {
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9rem;
+}
+
+.lg {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+}
+
+/* Variants */
+.primary {
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3), 0 0 40px rgba(99, 102, 241, 0.1);
+}
+
+.primary:hover {
+  background: var(--accent-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4), 0 0 60px rgba(99, 102, 241, 0.15);
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ghost:hover {
+  color: var(--text-primary);
+}
+
+.video {
+  background: var(--video-gradient);
+  color: white;
+  box-shadow: var(--shadow-glow-video);
+}
+
+.video:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 36px rgba(239, 68, 68, 0.5);
+}
+
+.design {
+  background: var(--design-gradient);
+  color: #1a1a2e;
+  box-shadow: var(--shadow-glow-design);
+}
+
+.design:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 36px rgba(245, 158, 11, 0.5);
+}
+
+.dev {
+  background: var(--dev-gradient);
+  color: white;
+  box-shadow: var(--shadow-glow-dev);
+}
+
+.dev:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 36px rgba(6, 182, 212, 0.5);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  transition: transform var(--transition-fast);
+}
+
+.button:hover .icon {
+  transform: translateX(3px);
+}

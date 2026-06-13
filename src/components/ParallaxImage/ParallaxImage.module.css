@@ -1,0 +1,52 @@
+.parallaxContainer {
+  position: absolute;
+  will-change: transform;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: screen;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+/* Add custom glow effects based on the image */
+.parallaxContainer::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.parallaxContainer[data-color="purple"]::after {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.4), transparent 70%);
+}
+
+.parallaxContainer[data-color="orange"]::after {
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.4), transparent 70%);
+}
+
+.parallaxContainer[data-color="cyan"]::after {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+}

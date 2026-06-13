@@ -1,0 +1,315 @@
+.container {
+  width: 100%;
+  margin-top: var(--space-lg);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.negotiableNote {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 100px;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.negotiableNote svg {
+  color: #ef4444;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  background: var(--bg-secondary);
+  padding: var(--space-xs);
+  border-radius: 100px;
+  border: 1px solid var(--border);
+}
+
+.tab {
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  color: var(--text-primary);
+}
+
+.activeTab {
+  background: #ef4444;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+.content {
+  position: relative;
+  min-height: 400px;
+}
+
+.billingToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.activeCycle {
+  color: var(--text-primary);
+}
+
+.toggleTrack {
+  width: 60px;
+  height: 32px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-accent);
+  border-radius: 30px;
+  position: relative;
+  padding: 4px;
+  transition: background 0.3s ease;
+}
+
+.toggleKnob {
+  width: 22px;
+  height: 22px;
+  background: #ef4444;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggleRight {
+  transform: translateX(28px);
+}
+
+.saveBadge {
+  display: inline-block;
+  margin-left: var(--space-xs);
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Cards Layout */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  padding: var(--space-lg) var(--space-xl);
+  border-top: 4px solid transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.popularCard {
+  border-top-color: #ef4444;
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+.popularBadge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ef4444;
+  color: white;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+}
+
+.planTitle {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-2xs);
+}
+
+.planSub {
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+}
+
+.priceContainer {
+  margin-bottom: var(--space-sm);
+}
+
+.price {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.pricePerVideo {
+  color: #ef4444;
+  font-weight: 600;
+  margin-top: var(--space-xs);
+}
+
+.pitchBox {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid var(--border-accent);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+.featuresList li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.featuresList svg {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Channels Grid */
+.channelsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.channelCard {
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.channelHeader h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-2xs);
+}
+
+.channelDesc {
+  color: #ef4444;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+}
+
+.channelPrice {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: var(--space-md);
+}
+
+.channelPitch {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  min-height: 60px;
+  margin-bottom: var(--space-lg);
+}
+
+/* Extras List */
+.extrasList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.extraRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-xl);
+  gap: var(--space-lg);
+}
+
+.extraInfo h4 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-2xs);
+}
+
+.extraInfo p {
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.extraPrice {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ef4444;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+    width: 100%;
+    border-radius: var(--radius-lg);
+  }
+  
+  .tab {
+    text-align: center;
+    border-radius: var(--radius-md);
+  }
+
+  .extraRow {
+    flex-direction: column;
+    text-align: center;
+    align-items: stretch;
+  }
+}
