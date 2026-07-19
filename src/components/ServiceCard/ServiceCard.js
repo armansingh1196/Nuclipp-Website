@@ -10,16 +10,7 @@ export default function ServiceCard({ icon, title, description, href, accentColo
       </div>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
-      {features.length > 0 && (
-        <ul className={styles.features}>
-          {features.map((feature, i) => (
-            <li key={i} className={styles.feature}>
-              <span className={styles.featureDot} />
-              {feature}
-            </li>
-          ))}
-        </ul>
-      )}
+
       <div className={styles.linkRow}>
         <span className={styles.linkText}>Explore</span>
         <ArrowUpRight size={16} />
