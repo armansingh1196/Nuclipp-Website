@@ -178,20 +178,19 @@ export default function HomePage() {
         <div className={`container ${styles.heroContent}`}>
           <div className={styles.heroBadge}>
             <Sparkles size={14} />
-            <span>AI Automation Agency</span>
+            <span>Tech & Creative Solutions</span>
           </div>
           <h1 className={styles.heroTitle}>
-            We Build AI Systems
+            Future-Proof Your Business
             <br />
-            That <span className="cursive-accent gradient-text">Run Your Business</span>
+            with <span className="cursive-accent gradient-text">Code, Creation & AI</span>
           </h1>
           <p className={styles.heroSubtitle}>
-            Custom AI agents and automation workflows that save your team 100+ hours every month.
-            From intelligent chatbots to end-to-end process automation — we handle the complexity.
+            We engineer bespoke applications, craft stunning visual identities, and deploy smart automations to help your brand move faster and look better than the competition.
           </p>
           <div className={styles.heroCtas}>
             <Button href="/contact" variant="primary" size="lg" icon={<ArrowRight size={18} />}>
-              Book a Free AI Audit
+              Start Your Next Project
             </Button>
             <Button href="#services" variant="secondary" size="lg">
               Explore Solutions
@@ -355,17 +354,16 @@ export default function HomePage() {
       {/* ── CTA Section ── */}
       <section className={styles.cta}>
         <div className={`container ${styles.ctaContent}`}>
-          <span className={styles.ctaLabel}>Ready to automate?</span>
+          <span className={styles.ctaLabel}>Ready to scale?</span>
           <h2 className={styles.ctaTitle}>
-            Let&apos;s Build Your AI System
+            Let&apos;s Build Your Next Project
           </h2>
           <p className={styles.ctaSubtitle}>
-            Book a free 30-minute AI audit. We&apos;ll map your workflows, identify
-            automation opportunities, and show you exactly how much time and money you can save.
+            Whether you need a high-converting website, custom software, or intelligent automation—we&apos;ll map out a solution that saves time and drives revenue.
           </p>
           <div className={styles.ctaButtons}>
             <Button href="/contact" variant="accent" size="lg" icon={<ArrowRight size={18} />}>
-              Book Your Free AI Audit
+              Start Your Project
             </Button>
             <Button href="https://wa.me/917903118040" variant="secondaryInverse" size="lg">
               Chat on WhatsApp
