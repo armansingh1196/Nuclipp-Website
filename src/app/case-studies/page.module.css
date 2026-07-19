@@ -210,14 +210,14 @@
   align-items: center;
   gap: 0;
   padding: var(--space-lg) 0;
-  min-height: 320px;
+  min-height: 480px;
 }
 
 .phoneMockup {
-  width: 120px;
+  width: 180px;
   background: #1a1a1a;
-  border-radius: 16px;
-  padding: 4px;
+  border-radius: 24px;
+  padding: 6px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
   position: relative;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
@@ -229,41 +229,41 @@
 
 .phoneMockup:nth-child(1) {
   z-index: 1;
-  transform: rotate(-8deg) translateY(10px) translateZ(0);
-  margin-right: -28px;
+  transform: rotate(-8deg) translateY(15px) translateZ(0);
+  margin-right: -42px;
 }
 
 .phoneMockup:nth-child(2) {
   z-index: 3;
-  transform: rotate(0deg) translateY(-8px) translateZ(0);
+  transform: rotate(0deg) translateY(-12px) translateZ(0);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
 .phoneMockup:nth-child(3) {
   z-index: 2;
-  transform: rotate(8deg) translateY(10px) translateZ(0);
-  margin-left: -28px;
+  transform: rotate(8deg) translateY(15px) translateZ(0);
+  margin-left: -42px;
 }
 
 .phoneMockupContainer:hover .phoneMockup:nth-child(1) {
-  transform: rotate(-4deg) translateY(0) translateX(-10px) translateZ(0);
+  transform: rotate(-4deg) translateY(0) translateX(-15px) translateZ(0);
 }
 
 .phoneMockupContainer:hover .phoneMockup:nth-child(2) {
-  transform: rotate(0deg) translateY(-14px) translateZ(0);
+  transform: rotate(0deg) translateY(-21px) translateZ(0);
 }
 
 .phoneMockupContainer:hover .phoneMockup:nth-child(3) {
-  transform: rotate(4deg) translateY(0) translateX(10px) translateZ(0);
+  transform: rotate(4deg) translateY(0) translateX(15px) translateZ(0);
 }
 
 .phoneNotch {
-  width: 40px;
-  height: 12px;
+  width: 60px;
+  height: 18px;
   background: #1a1a1a;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 12px 12px;
   position: absolute;
-  top: 4px;
+  top: 6px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -272,7 +272,7 @@
 .phoneScreen {
   width: 100%;
   aspect-ratio: 9 / 19;
-  border-radius: 13px;
+  border-radius: 20px;
   overflow: hidden;
   background: #000;
   -webkit-mask-image: -webkit-radial-gradient(white, black);

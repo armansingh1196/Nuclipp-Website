@@ -8,8 +8,8 @@ import styles from './page.module.css';
 
 const stats = [
   { value: 100, suffix: '+', label: 'Hours Saved Monthly' },
-  { value: 3, suffix: 's', label: 'Avg. Response Time' },
-  { value: 99.9, suffix: '%', label: 'System Uptime' },
+  { value: 85, suffix: '%', label: 'Faster Execution' },
+  { value: 24, suffix: '/7', label: 'Continuous Operations' },
   { value: 98, suffix: '%', label: 'Client Satisfaction' },
 ];
 
