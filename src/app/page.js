@@ -1,4 +1,4 @@
-import { ArrowRight, Bot, MessageSquare, Workflow, Phone, FileText, Code, Clock, Shield, Zap, TrendingUp, CheckCircle2, ChevronRight, Sparkles, Video, Palette, Smartphone, Package, Terminal } from 'lucide-react';
+import { ArrowRight, Bot, MessageSquare, Workflow, Phone, FileText, Code, Clock, Shield, Zap, TrendingUp, CheckCircle2, ChevronRight, Sparkles, Smartphone } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading/SectionHeading';
 import ServiceCard from '@/components/ServiceCard/ServiceCard';
 import StatsCounter from '@/components/StatsCounter/StatsCounter';
@@ -71,14 +71,6 @@ const services = [
     features: ['Responsive Design', 'SEO Optimized', 'Lightning Fast', 'Modern Frameworks'],
   },
   {
-    icon: <Terminal size={24} />,
-    title: 'Software Development',
-    description: 'Bespoke enterprise software, internal tools, and specialized scripts that automate and scale your core business operations.',
-    href: '/solutions',
-    accentColor: '#F59E0B',
-    features: ['Custom Logic', 'Scalable Arch', 'API Integrations', 'Secure Backends'],
-  },
-  {
     icon: <Smartphone size={24} />,
     title: 'Application Development',
     description: 'Scalable web and mobile applications tailored to your business needs, delivering seamless user experiences.',
@@ -86,37 +78,14 @@ const services = [
     accentColor: '#3B82F6',
     features: ['Cross-Platform', 'Custom Architecture', 'Secure & Reliable', 'App Store Deploy'],
   },
-  {
-    icon: <Video size={24} />,
-    title: 'Video Editing Services',
-    description: 'Premium video editing that turns raw footage into compelling stories, perfect for YouTube, ads, and social media.',
-    href: '/solutions',
-    accentColor: '#8B5CF6',
-    features: ['Engaging Cuts', 'Color Grading', 'Motion Graphics', 'Sound Design'],
-  },
-  {
-    icon: <Palette size={24} />,
-    title: 'Graphic Design',
-    description: 'Eye-catching visuals, branding, and packaging that make your product stand out in a crowded marketplace.',
-    href: '/solutions',
-    accentColor: '#EC4899',
-    features: ['Brand Identity', 'Thumbnails & Ads', 'UI/UX Design', 'Social Content'],
-  },
-  {
-    icon: <Package size={24} />,
-    title: 'Ready-Made Projects',
-    description: 'Pre-built, high-quality project templates and boilerplates that jumpstart your development or business launch.',
-    href: '/solutions',
-    accentColor: '#6366F1',
-    features: ['Instant Setup', 'Production Ready', 'Customizable', 'Full Source Code'],
-  },
 ];
 
 const processSteps = [
   { number: '01', title: 'Discovery & Audit', description: 'We map your workflows, identify automation opportunities, and calculate potential ROI for your business.', duration: 'Week 1' },
   { number: '02', title: 'Prototype & Design', description: 'We build a working prototype of your AI system, test it with real scenarios, and iterate based on your feedback.', duration: 'Week 2' },
-  { number: '03', title: 'Deploy & Integrate', description: 'Production deployment with full integration into your existing tools — CRM, WhatsApp, Slack, or custom APIs.', duration: 'Week 3' },
-  { number: '04', title: 'Monitor & Optimize', description: 'Ongoing monitoring, performance optimization, and monthly reporting. We maintain it so you don\'t have to.', duration: 'Ongoing' },
+  { number: '03', title: 'Development Phase', description: 'We engineer the core systems, writing clean code and building scalable architectures tailored to your requirements.', duration: 'Week 3-4' },
+  { number: '04', title: 'Deploy & Integrate', description: 'Production deployment with full integration into your existing tools — CRM, WhatsApp, Slack, or custom APIs.', duration: 'Week 5' },
+  { number: '05', title: 'Monitor & Optimize', description: 'Ongoing monitoring, performance optimization, and monthly reporting. We maintain it so you don\'t have to.', duration: 'Ongoing' },
 ];
 
 const testimonials = [
