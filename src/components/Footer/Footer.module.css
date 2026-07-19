@@ -1,8 +1,9 @@
 .footer {
-  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--bg-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: var(--space-4xl) 0 var(--space-xl);
   position: relative;
+  color: rgba(250, 250, 248, 0.8);
 }
 
 .footerGrid {
@@ -26,23 +27,31 @@
   text-decoration: none;
 }
 
-.logoImage {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+.logoMark {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: white;
   flex-shrink: 0;
 }
 
 .logoText {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--text-primary);
+  font-size: 1.15rem;
+  color: rgba(250, 250, 248, 0.95);
 }
 
 .brandDesc {
-  font-size: 0.875rem;
-  color: var(--text-tertiary);
+  font-size: 0.85rem;
+  color: rgba(250, 250, 248, 0.5);
   line-height: 1.7;
   max-width: 320px;
 }
@@ -54,24 +63,23 @@
 }
 
 .socialLink {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-lg);
-  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  color: rgba(250, 250, 248, 0.6);
   transition: all var(--transition-base);
 }
 
 .socialLink:hover {
-  color: var(--text-primary);
-  background: rgba(99, 102, 241, 0.1);
-  border-color: rgba(99, 102, 241, 0.25);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15);
+  color: rgba(250, 250, 248, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
 }
 
 /* Columns */
@@ -84,46 +92,46 @@
 .columnTitle {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--text-primary);
+  font-size: 0.85rem;
+  color: rgba(250, 250, 248, 0.95);
   margin-bottom: var(--space-sm);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 .footerLink {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  font-size: 0.875rem;
-  color: var(--text-tertiary);
+  font-size: 0.85rem;
+  color: rgba(250, 250, 248, 0.45);
   text-decoration: none;
   transition: all var(--transition-fast);
   padding: var(--space-xs) 0;
 }
 
 .footerLink:hover {
-  color: var(--text-primary);
-  transform: translateX(4px);
+  color: rgba(250, 250, 248, 0.9);
+  transform: translateX(3px);
 }
 
 .contactLink {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--accent-primary);
   text-decoration: none;
   transition: all var(--transition-fast);
 }
 
 .contactLink:hover {
-  color: var(--accent-secondary);
+  color: #F59E0B;
 }
 
 .contactNote {
   font-size: 0.8rem;
-  color: var(--text-tertiary);
+  color: rgba(250, 250, 248, 0.35);
   line-height: 1.6;
   margin-top: var(--space-xs);
 }
@@ -134,18 +142,18 @@
   justify-content: space-between;
   align-items: center;
   padding-top: var(--space-xl);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .copyright {
   font-size: 0.8rem;
-  color: var(--text-tertiary);
+  color: rgba(250, 250, 248, 0.35);
 }
 
 .tagline {
   font-size: 0.8rem;
-  color: var(--text-tertiary);
-  font-family: 'Playfair Display', Georgia, serif;
+  color: rgba(250, 250, 248, 0.35);
+  font-family: var(--font-serif);
   font-style: italic;
 }
 
@@ -164,15 +172,6 @@
 
   .footer {
     padding-top: var(--space-2xl);
-  }
-
-  .logoImage {
-    width: 28px;
-    height: 28px;
-  }
-
-  .logoText {
-    font-size: 1.1rem;
   }
 
   .brandDesc {

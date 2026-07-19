@@ -1,8 +1,7 @@
-import { Inter, Outfit } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import CustomCursor from "@/components/CustomCursor/CustomCursor";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -10,14 +9,8 @@ const inter = Inter({
   display: "swap",
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export const viewport = {
-  themeColor: "#0a0a0f",
+  themeColor: "#FAFAF8",
 };
 
 export const metadata = {
@@ -29,39 +22,39 @@ export const metadata = {
   },
   metadataBase: new URL("https://nuclipp.com"),
   title: {
-    default: "Nuclipp — Premium Freelance Creative Services | Video Editing, Graphic Design & Development",
-    template: "%s | Nuclipp",
+    default: "Nuclipp — AI Automation Agency | Custom AI Systems for Business",
+    template: "%s | Nuclipp AI",
   },
   description:
-    "Nuclipp is a premium freelance creative network offering expert video editing for YouTube automation, graphic design (posters, packaging, cards), and custom web & software development. 5+ years of proven results.",
+    "Nuclipp builds custom AI automation systems that save businesses 100+ hours per month. AI chatbots, lead qualification, CRM automation, and intelligent workflow solutions for startups, SMEs, and enterprises.",
   keywords: [
-    "freelance video editing",
-    "youtube automation editing",
-    "graphic design services",
-    "poster design",
-    "packaging design",
-    "business card design",
-    "web development",
-    "freelance developer",
-    "creative services",
+    "AI automation agency",
+    "AI chatbot development",
+    "business automation India",
+    "CRM automation",
+    "AI lead qualification",
+    "WhatsApp automation",
+    "custom AI solutions",
+    "workflow automation",
+    "AI consulting",
     "Nuclipp",
   ],
   authors: [{ name: "Nuclipp" }],
   creator: "Nuclipp",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: "https://nuclipp.com",
     siteName: "Nuclipp",
-    title: "Nuclipp — Premium Freelance Creative Services",
+    title: "Nuclipp — AI Automation Agency | Custom AI Systems for Business",
     description:
-      "Expert video editing, graphic design, and development services. 5+ years of proven results with YouTube automation, design, and custom software.",
+      "We build custom AI systems that automate support, qualify leads, and save your team 100+ hours every month. From chatbots to full workflow automation.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nuclipp — Premium Freelance Creative Services",
+    title: "Nuclipp — AI Automation Agency",
     description:
-      "Expert video editing, graphic design, and development services. 5+ years of proven results.",
+      "Custom AI automation systems for businesses. Chatbots, lead qualification, CRM automation, and more.",
   },
   robots: {
     index: true,
@@ -72,8 +65,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${outfit.variable}`}>
-        <CustomCursor />
+      <body className={inter.variable}>
         <Navbar />
         <main>{children}</main>
         <Footer />

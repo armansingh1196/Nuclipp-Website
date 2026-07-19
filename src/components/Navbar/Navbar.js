@@ -1,18 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/solutions', label: 'Solutions' },
+  { href: '/case-studies', label: 'Case Studies' },
   { href: '/about', label: 'About' },
-  { href: '/services/video-editing', label: 'Video Editing' },
-  { href: '/services/graphic-design', label: 'Graphic Design' },
-  { href: '/services/development', label: 'Development' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -37,7 +36,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.navInner}`}>
         <Link href="/" className={styles.logo}>
-          <Image src="/nuclipp-logo.svg" alt="Nuclipp" width={40} height={40} className={styles.logoImage} />
+          <Image src="/nuclipp-logo.svg" alt="Nuclipp Logo" width={36} height={36} className={styles.logoMarkImage} />
           <span className={styles.logoText}>Nuclipp</span>
         </Link>
 
@@ -53,7 +52,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link href="/contact" className={styles.ctaButton}>
-            Get a Quote
+            Book a Free AI Audit
           </Link>
         </div>
 

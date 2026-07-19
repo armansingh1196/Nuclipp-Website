@@ -1,12 +1,10 @@
 .card {
   position: relative;
-  background: linear-gradient(165deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-xl);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), var(--shadow-md);
-  padding: var(--space-2xl);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  padding: var(--space-xl);
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
@@ -14,29 +12,10 @@
   overflow: hidden;
 }
 
-.card::before {
-  content: '\201C';
-  position: absolute;
-  top: -10px;
-  right: 20px;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 8rem;
-  font-style: italic;
-  line-height: 1;
-  color: rgba(99, 102, 241, 0.06);
-  pointer-events: none;
-  transition: color var(--transition-slow);
-}
-
-.card:hover::before {
-  color: rgba(99, 102, 241, 0.12);
-}
-
 .card:hover {
-  background: linear-gradient(165deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 100%);
-  border-color: rgba(255, 255, 255, 0.18);
-  transform: translateY(-6px);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), var(--shadow-lg), 0 0 40px rgba(99,102,241,0.06);
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
 .stars {
@@ -47,10 +26,10 @@
 .content {
   font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.8;
+  line-height: 1.75;
   font-style: italic;
   flex-grow: 1;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-serif);
   font-weight: 400;
 }
 
@@ -58,14 +37,14 @@
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  margin-top: var(--space-md);
+  margin-top: var(--space-sm);
   padding-top: var(--space-md);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--border);
 }
 
 .avatar {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--accent-gradient);
   display: flex;
@@ -73,10 +52,9 @@
   justify-content: center;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: white;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .authorInfo {
@@ -103,14 +81,8 @@
     gap: var(--space-sm);
   }
 
-  .card::before {
-    font-size: 5rem;
-    top: -5px;
-    right: 10px;
-  }
-
   .content {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     line-height: 1.6;
   }
 
@@ -121,8 +93,8 @@
   }
 
   .avatar {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     font-size: 0.85rem;
   }
 

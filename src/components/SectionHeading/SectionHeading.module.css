@@ -16,28 +16,24 @@
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: var(--accent-primary);
-  background: rgba(99, 102, 241, 0.06);
-  border: 1px solid rgba(99, 102, 241, 0.12);
-  padding: var(--space-xs) var(--space-lg);
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-lg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  margin-bottom: var(--space-md);
 }
 
 .title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.875rem, 3.5vw, 2.75rem);
   font-weight: 800;
   line-height: 1.15;
+  letter-spacing: -0.025em;
   margin-bottom: var(--space-md);
+  color: var(--text-primary);
 }
 
 .subtitle {
   font-size: 1.05rem;
   color: var(--text-secondary);
-  max-width: 640px;
+  max-width: 600px;
   line-height: 1.7;
 }
 

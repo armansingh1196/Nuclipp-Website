@@ -6,7 +6,7 @@ export default function TestimonialCard({ name, role, content, rating = 5 }) {
     <div className={styles.card}>
       <div className={styles.stars}>
         {Array.from({ length: rating }).map((_, i) => (
-          <Star key={i} size={14} fill="var(--design-accent)" color="var(--design-accent)" />
+          <Star key={i} size={14} fill="#D97706" color="#D97706" />
         ))}
       </div>
       <p className={styles.content}>&ldquo;{content}&rdquo;</p>

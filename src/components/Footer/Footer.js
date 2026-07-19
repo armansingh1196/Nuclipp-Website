@@ -1,13 +1,21 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Video, Phone, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, ArrowUpRight } from 'lucide-react';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import styles from './Footer.module.css';
 
-const serviceLinks = [
-  { href: '/services/video-editing', label: 'Video Editing' },
-  { href: '/services/graphic-design', label: 'Graphic Design' },
-  { href: '/services/development', label: 'Development' },
+const solutionLinks = [
+  { href: '/solutions', label: 'AI Customer Support' },
+  { href: '/solutions', label: 'Lead Qualification AI' },
+  { href: '/solutions', label: 'CRM Automation' },
+  { href: '/solutions', label: 'WhatsApp Automation' },
+];
+
+const companyLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 const socialLinks = [
@@ -23,13 +31,12 @@ export default function Footer() {
           {/* Brand Column */}
           <div className={styles.brandColumn}>
             <Link href="/" className={styles.logo}>
-              <Image src="/nuclipp-logo.svg" alt="Nuclipp" width={36} height={36} className={styles.logoImage} />
+              <Image src="/nuclipp-logo.svg" alt="Nuclipp Logo" width={32} height={32} className={styles.logoMarkImage} />
               <span className={styles.logoText}>Nuclipp</span>
             </Link>
             <p className={styles.brandDesc}>
-              Premium creative services network specializing in video editing,
-              graphic design, and software development. Turning your vision into
-              digital reality since 2019.
+              AI Automation Agency building custom AI systems that save businesses
+              100+ hours per month. From chatbots to full workflow automation.
             </p>
             <div className={styles.socialLinks}>
               {socialLinks.map((social) => (
@@ -47,11 +54,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services Column */}
+          {/* Solutions Column */}
           <div className={styles.column}>
-            <h4 className={styles.columnTitle}>Services</h4>
-            {serviceLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={styles.footerLink}>
+            <h4 className={styles.columnTitle}>Solutions</h4>
+            {solutionLinks.map((link) => (
+              <Link key={link.label} href={link.href} className={styles.footerLink}>
                 {link.label}
                 <ArrowUpRight size={14} />
               </Link>
@@ -61,15 +68,12 @@ export default function Footer() {
           {/* Company Column */}
           <div className={styles.column}>
             <h4 className={styles.columnTitle}>Company</h4>
-            <Link href="/" className={styles.footerLink}>
-              Home <ArrowUpRight size={14} />
-            </Link>
-            <Link href="/about" className={styles.footerLink}>
-              About <ArrowUpRight size={14} />
-            </Link>
-            <Link href="/contact" className={styles.footerLink}>
-              Contact <ArrowUpRight size={14} />
-            </Link>
+            {companyLinks.map((link) => (
+              <Link key={link.label} href={link.href} className={styles.footerLink}>
+                {link.label}
+                <ArrowUpRight size={14} />
+              </Link>
+            ))}
           </div>
 
           {/* Contact Column */}
@@ -84,7 +88,7 @@ export default function Footer() {
               +91 7903118040
             </a>
             <p className={styles.contactNote}>
-              Available for freelance projects worldwide. Let&apos;s create something amazing together.
+              Free AI audit for qualifying businesses. Let&apos;s discuss how automation can transform your operations.
             </p>
           </div>
         </div>
@@ -94,7 +98,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Nuclipp. All rights reserved.
           </p>
           <p className={styles.tagline}>
-            Crafted with passion for creative excellence
+            Building intelligent systems for modern businesses
           </p>
         </div>
       </div>

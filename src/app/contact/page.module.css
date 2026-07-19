@@ -5,12 +5,12 @@
 /* ── Hero ── */
 .hero {
   position: relative;
-  min-height: 50vh;
+  min-height: 35vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: calc(var(--nav-height) + var(--space-3xl));
-  padding-bottom: var(--space-2xl);
+  padding-top: calc(var(--nav-height) + var(--space-xl));
+  padding-bottom: var(--space-lg);
 }
 
 .heroBackground {
@@ -56,7 +56,7 @@
 }
 
 .heroTitle {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 900;
   line-height: 1.08;
   letter-spacing: -0.03em;
@@ -64,10 +64,10 @@
 }
 
 .heroSubtitle {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  max-width: 520px;
-  line-height: 1.7;
+  max-width: 480px;
+  line-height: 1.6;
   animation: fadeInUp 0.5s ease-out 0.2s both;
 }
 
@@ -75,51 +75,51 @@
 .mainArea {
   position: relative;
   z-index: 10;
-  padding-bottom: var(--space-4xl);
+  padding-bottom: var(--space-2xl);
 }
 
 .overlapContainer {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  gap: var(--space-xl);
-  align-items: stretch;
+  gap: var(--space-lg);
+  align-items: start;
 }
 
 /* ── Form Card ── */
 .formCard {
-  padding: var(--space-3xl);
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-2xl);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  padding: var(--space-lg) var(--space-xl);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
 }
 
 .formHeader {
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-lg);
 }
 
 .formHeader h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: var(--space-xs);
   color: var(--text-primary);
 }
 
 .formHeader p {
   color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: var(--space-md);
 }
 
 .formRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
+  gap: var(--space-md);
 }
 
 .inputGroup {
@@ -130,7 +130,8 @@
 .floatingLabel {
   position: absolute;
   left: 1rem;
-  top: 1.2rem;
+  top: 1.1rem;
+  font-size: 0.8rem;
   color: var(--text-tertiary);
   pointer-events: none;
   transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
@@ -139,60 +140,123 @@
 .staticLabel {
   position: absolute;
   left: 1rem;
-  top: 0.6rem;
-  font-size: 0.75rem;
+  top: 0.5rem;
+  font-size: 0.7rem;
   font-weight: 500;
   color: var(--text-secondary);
   pointer-events: none;
 }
 
 .input,
-.select,
 .textarea {
   width: 100%;
-  padding: 1.8rem 1rem 0.6rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-lg);
+  padding: 1.2rem 0.8rem 0.4rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 0.8rem;
   transition: all var(--transition-fast);
   outline: none;
 }
 
 .input:focus,
-.select:focus,
 .textarea:focus {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-primary);
+  background: var(--bg-elevated);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
 }
 
 .input:focus ~ .floatingLabel,
 .input:not(:placeholder-shown) ~ .floatingLabel,
 .textarea:focus ~ .floatingLabel,
-.textarea:not(:placeholder-shown) ~ .floatingLabel {
-  top: 0.6rem;
-  font-size: 0.75rem;
+.textarea:not(:placeholder-shown) ~ .floatingLabel,
+.floatingLabelActive {
+  top: 0.5rem;
+  font-size: 0.7rem;
   color: var(--text-secondary);
 }
 
-.select {
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b6b80' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  padding-right: 40px;
+/* ── Custom Select ── */
+.customSelectContainer {
+  position: relative;
+  width: 100%;
+  outline: none;
 }
 
-.select option {
-  background: #111;
-  color: #fff;
+.customSelectHeader {
+  width: 100%;
+  padding: 1.2rem 0.8rem 0.4rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.customSelectHeader.open {
+  border-color: var(--accent-primary);
+  background: var(--bg-elevated);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+}
+
+.selectedValue {
+  color: var(--text-primary);
+  display: block;
+  min-height: 1.2rem;
+}
+
+.chevron {
+  color: var(--text-tertiary);
+  transition: transform var(--transition-fast);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.customSelectDropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+  overflow: hidden;
+  max-height: 240px;
+  overflow-y: auto;
+  animation: fadeInDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.customSelectOption {
+  padding: 12px 14px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.customSelectOption:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.selectedOption {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--accent-primary);
+  font-weight: 500;
 }
 
 .textarea {
   resize: vertical;
-  min-height: 150px;
+  min-height: 100px;
 }
 
 /* ── Success State ── */
@@ -227,31 +291,31 @@
 .infoColumn {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: var(--space-md);
 }
 
 .infoGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .infoCard {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
-  padding: var(--space-xl);
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-xl);
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
   transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
 }
 
 .infoCard:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .infoIcon {
@@ -260,15 +324,15 @@
 }
 
 .infoTitle {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: var(--space-xs);
+  margin-bottom: 2px;
 }
 
 .infoLink {
   color: var(--accent-primary);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   text-decoration: none;
   display: inline-block;
   font-weight: 500;
@@ -279,21 +343,21 @@
 }
 
 .infoText {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
 }
 
 .premiumBox {
-  padding: var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
   border: 1px solid var(--border-accent);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   text-align: center;
 }
 
 .premiumBox h3 {
-  font-size: 1.2rem;
-  margin-bottom: var(--space-sm);
+  font-size: 1rem;
+  margin-bottom: var(--space-xs);
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -301,9 +365,9 @@
 }
 
 .premiumBox p {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* ── Process Timeline ── */
@@ -327,7 +391,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+  background: linear-gradient(90deg, transparent, var(--accent-subtle), transparent);
   z-index: 0;
 }
 
@@ -343,15 +407,15 @@
 .timelinePoint {
   width: 40px;
   height: 40px;
-  background: rgba(20, 20, 25, 0.6);
+  background: var(--bg-elevated);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(99, 102, 241, 0.5);
+  border: 1px solid var(--accent-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: var(--space-lg);
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 15px var(--accent-subtle);
 }
 
 .stepNum {

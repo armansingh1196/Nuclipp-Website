@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, MessageSquare, Send, MapPin, Clock, ArrowRight, CheckCircle, Phone } from 'lucide-react';
+import { Mail, MessageSquare, Send, MapPin, Clock, CheckCircle, Phone, ChevronDown } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading/SectionHeading';
 import Button from '@/components/Button/Button';
 import styles from './page.module.css';
@@ -15,6 +15,61 @@ const serviceOptions = [
   'Ready-Made Project',
   'Other',
 ];
+
+const budgetOptions = [
+  { label: 'Under $500', value: 'under-500' },
+  { label: '$500 — $1,000', value: '500-1000' },
+  { label: '$1,000 — $5,000', value: '1000-5000' },
+  { label: '$5,000+', value: '5000+' },
+  { label: 'Not sure yet', value: 'not-sure' },
+];
+
+const CustomSelect = ({ options, value, onChange, label, name }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div
+      className={styles.customSelectContainer}
+      tabIndex={0}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) {
+          setIsOpen(false);
+        }
+      }}
+    >
+      <div
+        className={`${styles.customSelectHeader} ${isOpen ? styles.open : ''} ${value ? styles.hasValue : ''}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className={styles.selectedValue}>
+          {value ? (options.find((opt) => opt.value === value)?.label || value) : ''}
+        </span>
+        <ChevronDown size={16} className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ''}`} />
+      </div>
+
+      <label className={`${styles.floatingLabel} ${(isOpen || value) ? styles.floatingLabelActive : ''}`}>
+        {label}
+      </label>
+
+      {isOpen && (
+        <div className={styles.customSelectDropdown}>
+          {options.map((opt) => (
+            <div
+              key={opt.value}
+              className={`${styles.customSelectOption} ${value === opt.value ? styles.selectedOption : ''}`}
+              onClick={() => {
+                onChange({ target: { name, value: opt.value } });
+                setIsOpen(false);
+              }}
+            >
+              {opt.label}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -133,37 +188,22 @@ ${formState.message}
                   </div>
                   <div className={styles.formRow}>
                     <div className={styles.inputGroup}>
-                      <select
-                        id="service"
+                      <CustomSelect
                         name="service"
                         value={formState.service}
                         onChange={handleChange}
-                        className={styles.select}
-                        required
-                      >
-                        <option value="" disabled hidden>Select a service</option>
-                        {serviceOptions.map((opt) => (
-                          <option key={opt} value={opt}>{opt}</option>
-                        ))}
-                      </select>
-                      <label htmlFor="service" className={styles.staticLabel}>Service Needed</label>
+                        options={serviceOptions.map(opt => ({ label: opt, value: opt }))}
+                        label="Service Needed"
+                      />
                     </div>
                     <div className={styles.inputGroup}>
-                      <select
-                        id="budget"
+                      <CustomSelect
                         name="budget"
                         value={formState.budget}
                         onChange={handleChange}
-                        className={styles.select}
-                      >
-                        <option value="" disabled hidden>Select budget range</option>
-                        <option value="under-500">Under $500</option>
-                        <option value="500-1000">$500 — $1,000</option>
-                        <option value="1000-5000">$1,000 — $5,000</option>
-                        <option value="5000+">$5,000+</option>
-                        <option value="not-sure">Not sure yet</option>
-                      </select>
-                      <label htmlFor="budget" className={styles.staticLabel}>Budget Range</label>
+                        options={budgetOptions}
+                        label="Budget Range"
+                      />
                     </div>
                   </div>
                   <div className={styles.inputGroup}>
@@ -228,7 +268,7 @@ ${formState.message}
 
               <div className={styles.premiumBox}>
                 <h3>Ready to collaborate?</h3>
-                <p>We usually respond within 1-2 hours during business times. Let's make something extraordinary.</p>
+                <p>We usually respond within 1-2 hours during business times. Let&apos;s make something extraordinary.</p>
               </div>
             </div>
           </div>
