@@ -94,7 +94,7 @@ export default function ContactPage() {
     const apiUrl = '/api/contact';
     
     // Your Cal.com Scheduling Link
-    const calendlyUrl = 'https://cal.com/arman-singh/product-walkthrough';
+    const calendlyUrl = 'https://cal.id/arman-singh/product-walkthrough';
 
     try {
       // 1. Send data to our custom Next.js API route
