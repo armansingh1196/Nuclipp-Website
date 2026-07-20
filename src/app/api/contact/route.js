@@ -1,5 +1,6 @@
 import { google } from 'googleapis';
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 export async function POST(req) {
   try {
@@ -44,6 +45,49 @@ export async function POST(req) {
         ],
       },
     });
+
+    // --- Send Email Confirmation via Nodemailer ---
+    if (process.env.GMAIL_APP_PASSWORD) {
+      try {
+        const transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: 'business.nuclipp@gmail.com',
+            pass: process.env.GMAIL_APP_PASSWORD,
+          },
+        });
+
+        const mailOptions = {
+          from: '"Nuclipp" <business.nuclipp@gmail.com>',
+          to: email,
+          subject: 'We received your inquiry! - Nuclipp',
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+              <h2 style="color: #D97706;">Hi ${name},</h2>
+              <p>Thank you for reaching out to Nuclipp! We have successfully received your project inquiry regarding <strong>${service}</strong>.</p>
+              <p>We are reviewing your details and will get back to you within 24 hours.</p>
+              
+              <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p style="margin-top: 0;"><strong>Want to skip the wait?</strong></p>
+                <p>If you haven't already booked a time on our calendar, you can schedule a discovery call directly with our team here:</p>
+                <a href="https://cal.id/arman-singh/product-walkthrough?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}" style="display: inline-block; background-color: #0891B2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px;">Book a Discovery Call</a>
+              </div>
+              
+              <p>Looking forward to speaking with you,</p>
+              <p><strong>The Nuclipp Team</strong></p>
+            </div>
+          `,
+        };
+
+        await transporter.sendMail(mailOptions);
+        console.log("Confirmation email sent to:", email);
+      } catch (emailError) {
+        console.error("Failed to send email:", emailError);
+        // We don't fail the whole request if email fails, just log it.
+      }
+    } else {
+      console.warn("GMAIL_APP_PASSWORD is not set. Skipping email confirmation.");
+    }
 
     return NextResponse.json({ success: true, data: response.data });
   } catch (error) {
