@@ -80,32 +80,47 @@ export default function ContactPage() {
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    // Construct mailto link
-    const toEmail = 'business.nuclipp@gmail.com';
-    const subject = `New Project Inquiry from ${formState.name}`;
-    const body = `Name: ${formState.name}
-Email: ${formState.email}
-Service Required: ${formState.service}
-Budget: ${formState.budget}
+    // IMPORTANT: Replace this with your actual Zapier Webhook URL
+    const webhookUrl = 'https://hooks.zapier.com/hooks/catch/YOUR_WEBHOOK_ID_HERE';
+    
+    // Your Cal.com Scheduling Link
+    const calendlyUrl = 'https://cal.com/arman-singh/product-walkthrough';
 
-Message:
-${formState.message}
-`;
+    try {
+      // 1. Send data to webhook for Google Sheets / CRM tracking
+      await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
 
-    const mailtoLink = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    // Open default mail client
-    window.location.href = mailtoLink;
-
-    setIsSubmitted(true);
+      // 2. Redirect to Calendly with pre-filled fields
+      const redirectUrl = new URL(calendlyUrl);
+      redirectUrl.searchParams.append('name', formState.name);
+      redirectUrl.searchParams.append('email', formState.email);
+      
+      // Navigate to Calendly
+      window.location.href = redirectUrl.toString();
+      
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an issue submitting your form. Please try again or email us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -219,8 +234,8 @@ ${formState.message}
                     />
                     <label htmlFor="message" className={styles.floatingLabel}>Project Details</label>
                   </div>
-                  <Button type="submit" variant="primary" size="lg" fullWidth icon={<Send size={16} />}>
-                    Send Message
+                  <Button type="submit" variant="primary" size="lg" fullWidth icon={!isSubmitting && <Send size={16} />} disabled={isSubmitting}>
+                    {isSubmitting ? 'Processing...' : 'Send Message'}
                   </Button>
                 </form>
               )}
