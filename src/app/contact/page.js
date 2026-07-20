@@ -90,15 +90,15 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // IMPORTANT: Replace this with your actual Zapier Webhook URL
-    const webhookUrl = 'https://hooks.zapier.com/hooks/catch/YOUR_WEBHOOK_ID_HERE';
+    // Post to our custom API route
+    const apiUrl = '/api/contact';
     
     // Your Cal.com Scheduling Link
     const calendlyUrl = 'https://cal.com/arman-singh/product-walkthrough';
 
     try {
-      // 1. Send data to webhook for Google Sheets / CRM tracking
-      await fetch(webhookUrl, {
+      // 1. Send data to our custom Next.js API route
+      await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
