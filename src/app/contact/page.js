@@ -156,7 +156,7 @@ export default function ContactPage() {
             <div className={`glass-card ${styles.formCard}`}>
               <div className={styles.formHeader}>
                 <h2>Send a Message</h2>
-                <p>Fill out the details below. All inquiries are securely logged into our Trello CRM to ensure your project is managed with complete transparency from day one.</p>
+                <p>Fill out the details below. All inquiries are securely logged into our system to ensure your project is managed with complete transparency from day one.</p>
               </div>
 
               {isSubmitted ? (
